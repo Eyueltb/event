@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1>Events For Good</h1>
+    <h1 v-show="events.length > 0 ">Events List</h1>
     <div class="events">
-      <EventCard  v-for="event in events" :key="event.id" :event="event"/>
+      <EventCard  v-for="event in getEvents" :key="event.id" :event="event"/>
     </div>
   </div>
 </template>
@@ -10,7 +10,7 @@
 <script>
 
 import EventCard from "@/components/EventCard";
-
+//import EventService from '@/services/EventService.js'
 export default {
   name: "EventList",
   components: {
@@ -18,33 +18,24 @@ export default {
   },
   data() {
     return {
-      events:[
-        {
-          id: 12,
-          category: 'animal fair',
-          title: 'event desaaaaa',
-          description:'this is the event is',
-          location: 'Addis Ababa, Jafer',
-          date: 'January 28,2012',
-          time: '12:00',
-          petsAllowed: true,
-          organizer: 'Kat Lady',
-        },
-        {
-          id: 12,
-          category: 'cccc',
-          title: 'bbbbbbbbbbbbbbbbbbb',
-          description:'vvvvvvvvvvvvv',
-          location: 'bbbbbbbbbbbbbb',
-          date: 'January 28,2012',
-          time: '12:00',
-          petsAllowed: true,
-          organizer: 'Kat Lady',
-        }
-      ]
+      events:[]
     }
   },
+  created() {
+    /*EventService.getEvents()
+        .then(response => {
+          this.events = response.data
+        })
+        .catch(error => {
+          console.log('There was an error:', error.response)
+    })*/
 
+  },
+  methods:{
+    getEvents(){
+      return this.$store.state.events;
+    }
+  }
 };
 </script>
 

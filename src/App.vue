@@ -1,11 +1,17 @@
 <template>
-  <div id="nav">
-    <router-link :to="{ name:'EventList' }">Events</router-link> |
-    <router-link :to="{ name:'About' }">About</router-link>
+  <div id="app">
+    <NavBar/>
   </div>
   <router-view />
 </template>
-
+<script>
+import NavBar from '@/components/NavBar.vue'
+export default {
+  components: {
+    NavBar
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

@@ -1,0 +1,24 @@
+events:[
+        {
+          id: 12,
+          category: 'animal fair',
+          title: 'event desaaaaa',
+          description:'this is the event is',
+          location: 'Addis Ababa, Jafer',
+          date: 'January 28,2012',
+          time: '12:00',
+          petsAllowed: true,
+          organizer: 'Kat Lady',
+        },
+        {
+          id: 12,
+          category: 'cccc',
+          title: 'bbbbbbbbbbbbbbbbbbb',
+          description:'vvvvvvvvvvvvv',
+          location: 'bbbbbbbbbbbbbb',
+          date: 'January 28,2012',
+          time: '12:00',
+          petsAllowed: true,
+          organizer: 'Kat Lady',
+        }
+      ]
